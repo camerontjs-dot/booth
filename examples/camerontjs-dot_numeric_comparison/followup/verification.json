@@ -1,0 +1,168 @@
+{
+  "schema": 1,
+  "kind": "saved_evidence_consistency_receipts",
+  "experimental_source_commit": "658519e2b25ba3b1cec0d3ff62a1a665f5b66629",
+  "freeze_sha256": "02eb21ecaa09a5f2d8e3865c466dfcadcc3d4e48fdcedce4723c2d3effea8015",
+  "verifier_commands": {
+    "new_main": "python followup/verify_followup.py --run-dir followup/recorded/main",
+    "new_smoke": "python followup/verify_followup.py --run-dir followup/recorded/smoke",
+    "original": "python followup/verify_recorded.py --run-dir recorded",
+    "authored_main": "python followup/verify_followup.py --run-dir followup/recorded/authored-main"
+  },
+  "note": "Commands are relative to the parent numeric example directory. No models or providers are invoked. These checks establish saved-run consistency, not scientific qualification or external authenticity.",
+  "smoke": {
+    "schema": 1,
+    "verified_utc": "2026-11-17T05:34:46.118808+00:00",
+    "status": "PASS",
+    "scientific_qualification": false,
+    "network_and_model_calls": 0,
+    "checks": {
+      "total": 132,
+      "failed": 0
+    },
+    "findings": [],
+    "evidence_sha256": {
+      "manifest.json": "867b3a05c74880938ad77f1d69c3b1f8fb8c7b18f579a51452152829a8706061",
+      "completion.json": "8ffe6800efdcc69a79e1281d31799e6887a77f6e7d3afc747741980918fb2c48",
+      "records.jsonl": "ad669f46927454aed1294c957cd50bbadb706e8c2294a636f7cfef9215aebb21",
+      "summary.json": "d92d890be5ec18264ac317705ce2883eb835963dd22f1c4ef7686f9f27dbb548",
+      "checksums.json": "755dbaef97e2b880f4762869bb61667bccd1a72f61ded0d0c12828caff7af339",
+      "approval.json": "d09339a8bf59c79170f17258b5d0be32736c59af50efa59becf5ee101f0904cf",
+      "provider_calls.jsonl": "069446afa4416b83e7c3334323007c058da18a71c8409ac79a4608d8abf9a7c4",
+      "request_intents.jsonl": "de63d951161bc2cabdd60f35761c52c3a435a05cbec41e011bba5922a1eb59c5",
+      "model_before.json": "ae2999f4426294d9b2aa2947fefc534ac2e942daa0c44dded5c953fe93f4d3d0",
+      "model_after.json": "ae2999f4426294d9b2aa2947fefc534ac2e942daa0c44dded5c953fe93f4d3d0",
+      "ollama_version.json": "08ffc5526032c62e4bda58db8ce3faf55fd3fb0fbe6168d074ebc127c74ad87f"
+    }
+  },
+  "main": {
+    "schema": 1,
+    "verified_utc": "2026-11-17T05:39:58.800057+00:00",
+    "status": "PASS",
+    "scientific_qualification": false,
+    "network_and_model_calls": 0,
+    "checks": {
+      "total": 645,
+      "failed": 0
+    },
+    "findings": [],
+    "evidence_sha256": {
+      "manifest.json": "f644bcb7dc9a9db5bd179ee0ed34036761ddd89aa6d422bb6f7a79bffba98230",
+      "completion.json": "10f92ec6ac861aaed6311c2fd6c1418d9ef10fa002bfdfdd98e2255ab7b6a0da",
+      "records.jsonl": "1defd1684c88852153a410350adf5545ecc160046b5150344cf05fc477eee408",
+      "summary.json": "28a7eaba35cbfe4ca06f2f5c8cec757d06952e3527f1bbfbff9e9e368aff700f",
+      "checksums.json": "c6cad2ed39241bc3f6ac299a63cf5ccd22f390fa03237745c884f72c0dd59e8c",
+      "approval.json": "d09339a8bf59c79170f17258b5d0be32736c59af50efa59becf5ee101f0904cf",
+      "provider_calls.jsonl": "e8f4965e765c02315fc561bae408cdffa77b98d5eff6daa107ff7a62470c6918",
+      "request_intents.jsonl": "def48070ee95d8da6873f62eeb1a3c2cfee2a32fc3799930a94393b6f2f4faf8",
+      "model_before.json": "ae2999f4426294d9b2aa2947fefc534ac2e942daa0c44dded5c953fe93f4d3d0",
+      "model_after.json": "ae2999f4426294d9b2aa2947fefc534ac2e942daa0c44dded5c953fe93f4d3d0",
+      "ollama_version.json": "08ffc5526032c62e4bda58db8ce3faf55fd3fb0fbe6168d074ebc127c74ad87f"
+    }
+  },
+  "separate_saved_review": {
+    "status": "SAVED_MATRIX_REVIEW_COMPLETE",
+    "integrity_findings": [],
+    "material_interpretation_findings": [
+      "All26 numeric withholds are grammar failures; do not describe them as demonstrated arithmetic error detection.",
+      "21 declared unscoreables mix omitted/unsupported representation with three additional contextual half-up errors. Primary labels remain unchanged.",
+      "Four of eight declared correct main answers were withheld by both numeric gates."
+    ],
+    "source_commit": "658519e2b25ba3b1cec0d3ff62a1a665f5b66629",
+    "freeze_sha256": "02eb21ecaa09a5f2d8e3865c466dfcadcc3d4e48fdcedce4723c2d3effea8015",
+    "git_worktree_clean": true,
+    "actual_saved_generation_calls": {
+      "smoke": 3,
+      "main": 30,
+      "total": 33,
+      "warmup": 0,
+      "retry": 0,
+      "replay": 0
+    },
+    "existing_verifier_checks": {
+      "smoke": 132,
+      "main": 645
+    },
+    "separate_consistency_checks": {
+      "total": 107,
+      "passed": 107,
+      "failed": 0
+    },
+    "source_reference_cases": 33,
+    "rounding_reference_checks": 7,
+    "raw_replies_reviewed": 33,
+    "primary_main_grades": {
+      "unscoreable": 21,
+      "correct": 8,
+      "wrong": 1
+    },
+    "manual_primary_relabeling": false,
+    "review_artifact_sha256": {
+      "matrix-consistency.json": "dbe97740403c1c9a4f41b13af9a297212abfa23f1adda1ce3957763f7b869f51",
+      "semantic-review.json": "dbe5abd3398395c4bf700ad0821edace475e640215e63119e2544d5dcd895116",
+      "reference-arithmetic.json": "e9c7d03b5d34109e896be09c0ebc2e09904dca3f701276e6adf88e826e2f2c4a",
+      "grammar-limit-probes.json": "6e067de3c964b23def66f561d45981705b33c399ea3387a122090d68e120e356",
+      "REVIEW.md": "3d37600b16915f0d0acd1e65f6dabf2def6ec67065a935a42f62b3c7d05e90bf"
+    },
+    "experimental_model_calls_by_review": 0,
+    "network_requests_by_review": 0,
+    "source_or_evidence_edits": 0,
+    "scientific_qualification": false,
+    "publication_authorized": false
+  },
+  "component_tests": {
+    "status": "PASS",
+    "tests_passed": 535,
+    "skipped": 6,
+    "subtests_passed": 344,
+    "junit_counts": {
+      "tests": 885,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 6
+    },
+    "source_commit": "658519e2b25ba3b1cec0d3ff62a1a665f5b66629",
+    "source_tree": "d5b35682f13463ca7189ebbcd1ecf57baf58c16b",
+    "freeze_sha256": "02eb21ecaa09a5f2d8e3865c466dfcadcc3d4e48fdcedce4723c2d3effea8015",
+    "network_blocking_plugin_sha256": "9e5101cdd28ca3cfe6359ce400bcc474aa790da4174ce0ae58fe66cc742840d9",
+    "log_sha256": "1d8ea0f5f46e1ae2f4b1d5eb23500b2238c005599ffb64d683471cc52bd1543a",
+    "xml_sha256": "250b1f9b6a4051d7602df1fd5cfe5c802804dd9993f187f0f4af64efac70b00d",
+    "new_experimental_model_calls": 0
+  },
+  "contextual_review_sha256": "dbe5abd3398395c4bf700ad0821edace475e640215e63119e2544d5dcd895116",
+  "historical_review_notice": "Receipt states describe the time each check ran; the public report records the completed study. Separate review used Codex agents, not human or blind scientific qualification.",
+  "authored_main": {
+    "schema": 1,
+    "verified_utc": "2026-11-17T05:10:19.012998+00:00",
+    "status": "PASS",
+    "scientific_qualification": false,
+    "network_and_model_calls": 0,
+    "checks": {
+      "total": 710,
+      "failed": 0
+    },
+    "findings": [],
+    "evidence_sha256": {
+      "manifest.json": "0126240cbabb6e8ea1c3964422100a50d83d7c5a27c10df002e0029ae232d194",
+      "completion.json": "11e3ef3688c7ec4ce2a7fe1f6c9674e6950bdeb5304e84641a663f2c42a7e954",
+      "records.jsonl": "a572deb24e76482d1d97d9686e0b0a0b8e12b067b13a2488ae734a492d096d2d",
+      "summary.json": "84794f0ea77170de7a8587efad9b3b811ce2e8c48305d6b692fec7cdeced0ac4",
+      "checksums.json": "be179b3ad20397a3ea804e51e939d4e92eab1e0a7d289fe82e16004fb704c3b3"
+    }
+  },
+  "fresh_methods_review": {
+    "status": "NO_MATERIAL_NUMERICAL_OR_CONCLUSION_CORRECTION",
+    "scope": "Second read-only check of source/reference arithmetic, raw records, checkpoint stages, denominators and public wording; not a blind review",
+    "replay_checks": {
+      "smoke": 132,
+      "main": 645
+    },
+    "source_reference_pairs": 33,
+    "model_calls": 0,
+    "private_report_sha256": "b546c4f35391456269d7597bd0433e69bf803efe96119855ff669e405e2b0486",
+    "wording_refinements": [
+      "frozen follow-up reference grader",
+      "phase elapsed time"
+    ]
+  }
+}

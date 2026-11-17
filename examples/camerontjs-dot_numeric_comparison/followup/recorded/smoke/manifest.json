@@ -1,0 +1,166 @@
+{
+  "schema": 2,
+  "status": "OWNER_APPROVED",
+  "profile": "gemma_harder",
+  "phase": "smoke",
+  "case_set": "harder",
+  "model": "gemma3:12b",
+  "digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+  "quantization": "Q4_K_M",
+  "model_ready": true,
+  "host": "http://127.0.0.1:11434",
+  "settings": {
+    "temperature": 0,
+    "seed": 42,
+    "num_predict": 1024,
+    "num_ctx": 4096,
+    "timeout_s": 300,
+    "max_retries": 0,
+    "confidence_threshold": 0.7,
+    "keyword_threshold": 0.5
+  },
+  "planned_case_calls": 3,
+  "warmup_calls": 0,
+  "replay_model_calls": 0,
+  "expected_total_model_calls": 3,
+  "repetitions": 1,
+  "freeze_sha256": "02eb21ecaa09a5f2d8e3865c466dfcadcc3d4e48fdcedce4723c2d3effea8015",
+  "source_commit": "658519e2b25ba3b1cec0d3ff62a1a665f5b66629",
+  "case_ids": [
+    "smoke_01",
+    "smoke_02",
+    "smoke_03"
+  ],
+  "unshuffled_cases_sha256": "4ef71c461f9090c8f46a1df03b7b13fa6bac188e274ff2e10c49ad85c2b87d9d",
+  "mode": "live",
+  "run_id": "gemma-harder-v1",
+  "started_utc": "2026-11-17T05:33:42.835541+00:00",
+  "cases": [
+    {
+      "id": "smoke_02",
+      "category": "smoke_days",
+      "source": "Synthetic smoke policy Tansy.\nWaiting duration: 23 days\nRenewal duration: 7 months",
+      "question": "What is the Waiting duration in days?",
+      "target": "Waiting duration",
+      "round_places": null,
+      "reference": {
+        "value": "23",
+        "unit": "days"
+      },
+      "correct_answer": "23 days",
+      "wrong_answer": "23 months",
+      "answer_format": "One explicit quantity with its unit; the reference grader also supports the exact wrappers and number forms documented in followup_grade.py.",
+      "challenge_kind": "smoke_wrong_dimension"
+    },
+    {
+      "id": "smoke_01",
+      "category": "smoke_currency",
+      "source": "Synthetic smoke invoice Saffron.\nInvoice total: 61.40 GBP\nDeposit total: 4.00 GBP",
+      "question": "What is the Invoice total in GBP?",
+      "target": "Invoice total",
+      "round_places": null,
+      "reference": {
+        "value": "61.40",
+        "unit": "GBP"
+      },
+      "correct_answer": "61.40 GBP",
+      "wrong_answer": "4 GBP",
+      "answer_format": "One explicit quantity with its unit; the reference grader also supports the exact wrappers and number forms documented in followup_grade.py.",
+      "challenge_kind": "smoke_wrong_field"
+    },
+    {
+      "id": "smoke_03",
+      "category": "smoke_rate",
+      "source": "Synthetic smoke policy Verbena.\nDiscount rate: 6.25%\nSurcharge rate: 1.25%",
+      "question": "What is the Discount rate, expressed as a rate?",
+      "target": "Discount rate",
+      "round_places": null,
+      "reference": {
+        "value": "1/16",
+        "unit": "rate"
+      },
+      "correct_answer": "fraction 1/16",
+      "wrong_answer": "fraction 1/80",
+      "answer_format": "One explicit quantity with its unit; the reference grader also supports the exact wrappers and number forms documented in followup_grade.py.",
+      "challenge_kind": "smoke_rate_equivalence"
+    }
+  ],
+  "case_order": [
+    "smoke_02",
+    "smoke_01",
+    "smoke_03"
+  ],
+  "booth_version": "0.5.9",
+  "booth_core_sha256": "a9c17380287f36f3d67c736034652175023ce6ebf15ac904a87934d7b3ee7fb4",
+  "python": "3.12.13",
+  "os": "macOS-27.0-arm64-arm-64bit",
+  "hardware": {
+    "machine": "arm64",
+    "processor": "arm",
+    "hw.memsize": "25769803776",
+    "hw.ncpu": "8",
+    "machdep.cpu.brand_string": "Apple M3"
+  },
+  "freeze": {
+    "schema": 1,
+    "candidate_id": "booth36-independent-frozen-v4",
+    "frozen_utc": "2026-11-17T05:09:44.923751+00:00",
+    "base_commit": "59c0f3aabd558169ce21bcc63e00e46ff57ab8d0",
+    "original_checker_commit": "ea28a68f62affd1b6f36001d181ca4730eea47fa",
+    "booth_version": "0.5.9",
+    "booth_core_sha256": "a9c17380287f36f3d67c736034652175023ce6ebf15ac904a87934d7b3ee7fb4",
+    "files": {
+      ".gitignore": "b962c05561467599ba4ca6214accaf1484b6b24e1af7af20e5db20cb75a42be0",
+      "PROTOCOL.md": "0020ceb2d3f828c6eec1d725572e6768ff27d237261958c9a76127a856339189",
+      "RESULTS.md": "a9ead226c6af123350b9b522fc94be684930a5f43959f6e25e12018fa10f11fa",
+      "cases.json": "d7943aff3311f50d887e14fa0f01d9170d7dd354516ab7f1c6ecddd9f9871232",
+      "followup/.gitignore": "5f63604256b435b343607e51df1fb4c04c86a04c6755078c81a5f820b52ca147",
+      "followup/CASE_PROVENANCE.json": "b8d1530ea3935614bdd23a2c496d5caadcaa45ba74a8ff6ba960ccd48ca5e2dd",
+      "followup/PROTOCOL.md": "5a05bbdc85ca1dbd8a0176ce6170d4885abc1dee7341a013b0aec2278a7e62dc",
+      "followup/README.md": "4d5f987e8d1e936d7deb71c8e0f615bb22e01011a262bf411feec16fccab636f",
+      "followup/RUNS.json": "99b01fbf5fdfed6a962ba377f60c8343864f9248d0cec898614d1384a9e623da",
+      "followup/challenge_cases.json": "142218af03f1af0f0e70163b14e8747c278c39a50b4376c983cb2f31aad6f83c",
+      "followup/conftest.py": "ebbf1f319a6c7d503c50980e34b5982631e9a2bb9e91701e72d0273c0ed45920",
+      "followup/followup_grade.py": "b1f30b1ab46096bd8b4cbb86fddf5e07cbbe3d2d10d256271e4bf5bde9bed14d",
+      "followup/runtime.py": "94a80387bcee718123e28bb62f5f4978c143818e0becf3c46348b90d6f5971b7",
+      "followup/study.py": "df4461508a8a635e71eea64a41b0ab9ec016269f556ed3b8b33cf1fbdf0a0a4b",
+      "followup/test_followup_grade.py": "5df1fe629a587e10a5fc8eeace9928d75511a87dde4b2b9773a9204fd35b0850",
+      "followup/test_study.py": "da9374b59d9679e2abdc2f3b6b238281467ae7b1ec5cde2897823d4ea056ceea",
+      "followup/test_verify_recorded.py": "ccbff9596b7455df8f7151b0ebfb2bc4aa2028ac08487af66d8688390299cdfa",
+      "followup/verify_followup.py": "e9233571f063e1cd40f229033cbb536c7c16f9d5c468162073022c9167e4ecb9",
+      "followup/verify_recorded.py": "d0f118c171a1908f73632a6a111ac707e2cb8b369b7c569e74bb1ea97c111ad1",
+      "grade_answers.py": "ecb1bf9941f9f35f32eeedd5ef244612b5df0ca20e2369f41dcbe527fc8ff0e1",
+      "recorded/audit.json": "25afb79ac4d08870c75c5f8b27f13d707550ff5088ba8a588b934e581345c809",
+      "recorded/checksums.json": "d89c59e5b27c9c73e22fd0a2f963a7912ecdcd64540f1813707db86867537a4b",
+      "recorded/completion.json": "2323712a484763b4dd6a96927a0bc0552a0a9f921dadb5a2a01adccfe242f8ac",
+      "recorded/manifest.json": "1c27006776eb9d5554ae76de96e8a83e6a688d9b4a05ae88fea92cc6b8a2f5e0",
+      "recorded/model_after.json": "ae2999f4426294d9b2aa2947fefc534ac2e942daa0c44dded5c953fe93f4d3d0",
+      "recorded/provider_calls.jsonl": "981d63ee9d5016e6beab8f456248584faa3985b1a640ff351e6b3bee08f53611",
+      "recorded/records.jsonl": "dd23d9b2c8635f1b062dd7ad8e6b324fcf52c28a52469aebebbcaa90ce4115ad",
+      "recorded/summary.json": "fc578e1b66f9ce383297b3671c846f5b870fee44771378b1c82e3bee909da1df",
+      "recorded/summary.md": "35ea37a4cc4b1d71c7db0d2c3c45bdd0e1e1df1ad1e1d849b113bbd244e61f4a",
+      "run_example.py": "dbdc6d82e79cc62714c60eab55fc2229f2ba89416c9c8e256162d8f9c1aaa2fb",
+      "test_example.py": "d5851a370e6a5fbce305e1cd48f9230e1431b129e4e28feedc443c2a1dbd21e6",
+      "test_grading.py": "e6dc7af74118ab25d0d7a8032c790274befb4ab982fe35399c170c81475de95a",
+      "validation.json": "e644830221ad4fcf1e892f2a3c3459944dfc7295ad4b2452206a698d462562c7"
+    },
+    "non_claims": [
+      "No model calls authorized",
+      "No blind scientific qualification",
+      "No public scope acceptance or publication",
+      "The numeric checker remains unchanged"
+    ],
+    "update_rule": "Any inference-time source, protocol or fixture change requires a successor candidate and run.",
+    "supersedes_freeze_sha256": "dd4cc5cf8e5d066395d50d273db598a3fe97b6ce5395538a8d547a6b18d8bce4",
+    "revision_reason": "Pre-inference review: share timezone-aware owner approval timestamp validation between gate and saved-run verifier; add three deterministic regression cases. No checker/case/grader changes."
+  },
+  "configured_case_calls": 3,
+  "approval_sha256": "d09339a8bf59c79170f17258b5d0be32736c59af50efa59becf5ee101f0904cf",
+  "non_claims": [
+    "new controls are authored, not model output",
+    "same frozen numeric rule in B and D",
+    "broader reference grading is bounded",
+    "no retry repair",
+    "no blind scientific qualification"
+  ]
+}

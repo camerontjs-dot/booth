@@ -1,0 +1,15 @@
+{
+  "schema": 2,
+  "status": "completed",
+  "finished_utc": "2026-11-17T05:39:44.574734+00:00",
+  "elapsed_s": 287.5671060420573,
+  "planned_case_calls": 30,
+  "attempted_case_calls": 30,
+  "successful_case_calls": 30,
+  "failed_case_calls": 0,
+  "not_attempted_case_calls": 0,
+  "warmup_calls": 0,
+  "replay_model_calls": 0,
+  "records": 30,
+  "error": null
+}

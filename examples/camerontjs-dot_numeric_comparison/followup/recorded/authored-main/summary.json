@@ -1,0 +1,114 @@
+{
+  "schema": 2,
+  "execution": {
+    "planned_case_calls": 0,
+    "attempted_case_calls": 0,
+    "successful_case_calls": 0,
+    "failed_case_calls": 0,
+    "not_attempted_case_calls": 0,
+    "warmup_calls": 0,
+    "replay_model_calls": 0
+  },
+  "layers": {
+    "independent_authored_candidates": {
+      "rows": 60,
+      "arms": {
+        "check": {
+          "rows": 60,
+          "evaluated": 60,
+          "not_run": 0,
+          "correct": 30,
+          "wrong": 30,
+          "unscoreable": 0,
+          "no_answer": 0,
+          "correct_accepted": 30,
+          "correct_withheld": 0,
+          "wrong_accepted": 30,
+          "wrong_withheld": 0,
+          "unscoreable_accepted": 0,
+          "unscoreable_withheld": 0,
+          "no_answer_accepted": 0,
+          "no_answer_withheld": 0,
+          "call_failed": 0,
+          "all_parse_failed": 0,
+          "checker_failed": 0,
+          "statuses": {
+            "ACCEPTED": 60
+          }
+        },
+        "validator": {
+          "rows": 60,
+          "evaluated": 60,
+          "not_run": 0,
+          "correct": 30,
+          "wrong": 30,
+          "unscoreable": 0,
+          "no_answer": 0,
+          "correct_accepted": 3,
+          "correct_withheld": 27,
+          "wrong_accepted": 0,
+          "wrong_withheld": 30,
+          "unscoreable_accepted": 0,
+          "unscoreable_withheld": 0,
+          "no_answer_accepted": 0,
+          "no_answer_withheld": 0,
+          "call_failed": 0,
+          "all_parse_failed": 0,
+          "checker_failed": 0,
+          "statuses": {
+            "ACCEPTED": 3,
+            "UNCERTAIN": 57
+          }
+        },
+        "keyword_evidence": {
+          "rows": 60,
+          "evaluated": 60,
+          "not_run": 0,
+          "correct": 30,
+          "wrong": 30,
+          "unscoreable": 0,
+          "no_answer": 0,
+          "correct_accepted": 18,
+          "correct_withheld": 12,
+          "wrong_accepted": 25,
+          "wrong_withheld": 5,
+          "unscoreable_accepted": 0,
+          "unscoreable_withheld": 0,
+          "no_answer_accepted": 0,
+          "no_answer_withheld": 0,
+          "call_failed": 0,
+          "all_parse_failed": 0,
+          "checker_failed": 0,
+          "statuses": {
+            "ACCEPTED": 43,
+            "BLOCKED": 17
+          }
+        },
+        "numeric_evidence": {
+          "rows": 60,
+          "evaluated": 60,
+          "not_run": 0,
+          "correct": 30,
+          "wrong": 30,
+          "unscoreable": 0,
+          "no_answer": 0,
+          "correct_accepted": 3,
+          "correct_withheld": 27,
+          "wrong_accepted": 0,
+          "wrong_withheld": 30,
+          "unscoreable_accepted": 0,
+          "unscoreable_withheld": 0,
+          "no_answer_accepted": 0,
+          "no_answer_withheld": 0,
+          "call_failed": 0,
+          "all_parse_failed": 0,
+          "checker_failed": 0,
+          "statuses": {
+            "ACCEPTED": 3,
+            "BLOCKED": 57
+          }
+        }
+      }
+    }
+  }
+}

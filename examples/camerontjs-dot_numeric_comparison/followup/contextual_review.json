@@ -1,0 +1,350 @@
+{
+  "status": "REVIEW_COMPLETED_PRIMARY_GRADES_UNCHANGED",
+  "summary": {
+    "primary_main_grades": {
+      "unscoreable": 21,
+      "correct": 8,
+      "wrong": 1
+    },
+    "numeric_gates": {
+      "accepted": 4,
+      "withheld": 26,
+      "correct_accepted": 4,
+      "correct_withheld": 4,
+      "wrong_accepted": 0,
+      "wrong_withheld": 1,
+      "unscoreable_accepted": 0,
+      "unscoreable_withheld": 21
+    },
+    "manual_only_unscoreable_observations": {
+      "matching_magnitude_with_context_or_equivalent_fraction_syntax": 18,
+      "half_up_magnitude_errors": 3,
+      "magnitude_error_ids": [
+        "main_26",
+        "main_27",
+        "main_28"
+      ],
+      "plain_numeric_answers_without_unit": 19,
+      "bare_fraction_without_required_fraction_prefix": 1,
+      "explicit_USD_slash_fraction_without_required_fraction_prefix": 1
+    },
+    "missing_answers": 0,
+    "numeric_false_accepts_against_declared_scoreable_labels": 0,
+    "numeric_withholding_mechanism": "All26 main B/D withholds are grammar rejections; no value-or-unit mismatch decision was reached.",
+    "correct_withheld_ids": [
+      "main_15",
+      "main_19",
+      "main_21",
+      "main_24"
+    ],
+    "numeric_withholding_reason_counts": {
+      "unsupported quantity grammar": 13,
+      "explicit unit or currency required": 13
+    }
+  },
+  "per_case_observations": [
+    {
+      "phase": "smoke",
+      "case_id": "smoke_02",
+      "answer": "23",
+      "primary_grade": "unscoreable",
+      "manual_magnitude_matches_reference": true,
+      "manual_note": "Bare number matches requested quantity magnitude if the question supplies the missing GBP/days unit. Primary unscoreable label retained."
+    },
+    {
+      "phase": "smoke",
+      "case_id": "smoke_01",
+      "answer": "61.40",
+      "primary_grade": "unscoreable",
+      "manual_magnitude_matches_reference": true,
+      "manual_note": "Bare number matches requested quantity magnitude if the question supplies the missing GBP/days unit. Primary unscoreable label retained."
+    },
+    {
+      "phase": "main",
+      "case_id": "main_20",
+      "answer": "12345",
+      "primary_grade": "unscoreable",
+      "manual_magnitude_matches_reference": true,
+      "contextual_numeric_value": "12345",
+      "question_supplied_dimension": "days",
+      "manual_note": "Figure-space thousands source correctly becomes12345; days omitted.",
+      "numeric_rejection_reason": "unsupported quantity grammar"
+    },
+    {
+      "phase": "main",
+      "case_id": "main_15",
+      "answer": "-12.5%",
+      "primary_grade": "correct",
+      "manual_magnitude_matches_reference": true,
+      "manual_note": "Correct-12.5% answer withheld because requested source uses unsupported Unicode minus. No value comparison was reached.",
+      "numeric_rejection_reason": "unsupported quantity grammar"
+    },
+    {
+      "phase": "main",
+      "case_id": "main_11",
+      "answer": "4200",
+      "primary_grade": "unscoreable",
+      "manual_magnitude_matches_reference": true,
+      "contextual_numeric_value": "4200",
+      "question_supplied_dimension": "USD",
+      "manual_note": "4.2e3 correctly becomes4200; USD omitted.",
+      "numeric_rejection_reason": "unsupported quantity grammar"
+    },
+    {
+      "phase": "main",
+      "case_id": "main_27",
+      "answer": "-12.5",
+      "primary_grade": "unscoreable",
+      "manual_magnitude_matches_reference": false,
+      "contextual_numeric_value": "-25/2",
+      "question_supplied_dimension": "CAD",
+      "manual_note": "Half-up rounding of-12.5 to0places is-13; output repeats unrounded-12.5 and omits CAD.",
+      "numeric_rejection_reason": "explicit unit or currency required"
+    },
+    {
+      "phase": "main",
+      "case_id": "main_23",
+      "answer": "-8765.4321",
+      "primary_grade": "unscoreable",
+      "manual_magnitude_matches_reference": true,
+      "contextual_numeric_value": "-87654321/10000",
+      "question_supplied_dimension": "USD",
+      "manual_note": "Sign, grouping and exact decimals preserved numerically; USD omitted.",
+      "numeric_rejection_reason": "unsupported quantity grammar"
+    },
+    {
+      "phase": "main",
+      "case_id": "main_07",
+      "answer": "2.68",
+      "primary_grade": "unscoreable",
+      "manual_magnitude_matches_reference": true,
+      "contextual_numeric_value": "67/25",
+      "question_supplied_dimension": "USD",
+      "manual_note": "2.675 rounded half-up to2places is2.68; USD omitted.",
+      "numeric_rejection_reason": "explicit unit or currency required"
+    },
+    {
+      "phase": "main",
+      "case_id": "main_06",
+      "answer": "-640.25",
+      "primary_grade": "unscoreable",
+      "manual_magnitude_matches_reference": true,
+      "contextual_numeric_value": "-2561/4",
+      "question_supplied_dimension": "USD",
+      "manual_note": "Accounting-parentheses source correctly interpreted as negative; USD omitted.",
+      "numeric_rejection_reason": "explicit unit or currency required"
+    },
+    {
+      "phase": "main",
+      "case_id": "main_12",
+      "answer": "7/8",
+      "primary_grade": "unscoreable",
+      "manual_magnitude_matches_reference": true,
+      "contextual_numeric_value": "7/8",
+      "question_supplied_dimension": "rate",
+      "manual_note": "Bare7/8 is the requested rate in context; declared grammar requires literal fraction prefix.",
+      "numeric_rejection_reason": "unsupported quantity grammar"
+    },
+    {
+      "phase": "main",
+      "case_id": "main_16",
+      "answer": "1,250,000",
+      "primary_grade": "unscoreable",
+      "manual_magnitude_matches_reference": true,
+      "contextual_numeric_value": "1250000",
+      "question_supplied_dimension": "CAD",
+      "manual_note": "1.25million correctly becomes1,250,000; CAD omitted.",
+      "numeric_rejection_reason": "explicit unit or currency required"
+    },
+    {
+      "phase": "main",
+      "case_id": "main_10",
+      "answer": "1234.50",
+      "primary_grade": "unscoreable",
+      "manual_magnitude_matches_reference": true,
+      "contextual_numeric_value": "2469/2",
+      "question_supplied_dimension": "EUR",
+      "manual_note": "Declared decimal-comma and narrow-space source correctly becomes1234.50; EUR omitted.",
+      "numeric_rejection_reason": "unsupported quantity grammar"
+    },
+    {
+      "phase": "main",
+      "case_id": "main_26",
+      "answer": "-9.9",
+      "primary_grade": "unscoreable",
+      "manual_magnitude_matches_reference": false,
+      "contextual_numeric_value": "-99/10",
+      "question_supplied_dimension": "GBP",
+      "manual_note": "Half-up rounding of-9.95 to1place is-10.0; output-9.9 is numerically wrong and omits GBP.",
+      "numeric_rejection_reason": "unsupported quantity grammar"
+    },
+    {
+      "phase": "main",
+      "case_id": "main_30",
+      "answer": "-0.01",
+      "primary_grade": "unscoreable",
+      "manual_magnitude_matches_reference": true,
+      "contextual_numeric_value": "-1/100",
+      "question_supplied_dimension": "EUR",
+      "manual_note": "Half-up rounding of-0.005 to2places is-0.01; EUR omitted.",
+      "numeric_rejection_reason": "explicit unit or currency required"
+    },
+    {
+      "phase": "main",
+      "case_id": "main_22",
+      "answer": "1,200",
+      "primary_grade": "unscoreable",
+      "manual_magnitude_matches_reference": true,
+      "contextual_numeric_value": "1200",
+      "question_supplied_dimension": "items",
+      "manual_note": "Number matches the requested quantity magnitude; explicit unit omitted.",
+      "numeric_rejection_reason": "explicit unit or currency required"
+    },
+    {
+      "phase": "main",
+      "case_id": "main_17",
+      "answer": "40000 GBP",
+      "primary_grade": "wrong",
+      "manual_magnitude_matches_reference": false,
+      "manual_note": "0.000004billion GBP is4000GBP.40000GBP is ten times too large. A/C accepted; B/D withheld at unsupported source grammar, not an arithmetic mismatch.",
+      "numeric_rejection_reason": "unsupported quantity grammar"
+    },
+    {
+      "phase": "main",
+      "case_id": "main_28",
+      "answer": "8.5",
+      "primary_grade": "unscoreable",
+      "manual_magnitude_matches_reference": false,
+      "contextual_numeric_value": "17/2",
+      "question_supplied_dimension": "EUR",
+      "manual_note": "Half-up rounding of8.5 to0places is9; output repeats unrounded8.5 and omits EUR.",
+      "numeric_rejection_reason": "explicit unit or currency required"
+    },
+    {
+      "phase": "main",
+      "case_id": "main_02",
+      "answer": "37",
+      "primary_grade": "unscoreable",
+      "manual_magnitude_matches_reference": true,
+      "contextual_numeric_value": "37",
+      "question_supplied_dimension": "items",
+      "manual_note": "Number matches the requested quantity magnitude; explicit unit omitted.",
+      "numeric_rejection_reason": "explicit unit or currency required"
+    },
+    {
+      "phase": "main",
+      "case_id": "main_14",
+      "answer": "2.5",
+      "primary_grade": "unscoreable",
+      "manual_magnitude_matches_reference": true,
+      "contextual_numeric_value": "5/2",
+      "question_supplied_dimension": "percentage_points",
+      "manual_note": "2.5 matches percentage-point movement in context; explicit percentage-points unit omitted.",
+      "numeric_rejection_reason": "explicit unit or currency required"
+    },
+    {
+      "phase": "main",
+      "case_id": "main_19",
+      "answer": "−0.000 percent",
+      "primary_grade": "correct",
+      "manual_magnitude_matches_reference": true,
+      "manual_note": "Correct zero rate withheld because source/answer use unsupported Unicode minus. Signed zero remains numerically zero.",
+      "numeric_rejection_reason": "unsupported quantity grammar"
+    },
+    {
+      "phase": "main",
+      "case_id": "main_18",
+      "answer": "25/4 USD",
+      "primary_grade": "unscoreable",
+      "manual_magnitude_matches_reference": true,
+      "contextual_numeric_value": "25/4",
+      "question_supplied_dimension": "USD",
+      "manual_note": "25/4USD is6.25USD with explicit currency; declared grammar requires literal fraction prefix.",
+      "numeric_rejection_reason": "unsupported quantity grammar"
+    },
+    {
+      "phase": "main",
+      "case_id": "main_29",
+      "answer": "1.234500",
+      "primary_grade": "unscoreable",
+      "manual_magnitude_matches_reference": true,
+      "contextual_numeric_value": "2469/2000",
+      "question_supplied_dimension": "USD",
+      "manual_note": "1.234500 equals exact1.2345; USD omitted.",
+      "numeric_rejection_reason": "explicit unit or currency required"
+    },
+    {
+      "phase": "main",
+      "case_id": "main_05",
+      "answer": "-125.50",
+      "primary_grade": "unscoreable",
+      "manual_magnitude_matches_reference": true,
+      "contextual_numeric_value": "-251/2",
+      "question_supplied_dimension": "CAD",
+      "manual_note": "ASCII minus correctly preserves the Unicode-minus source amount; CAD omitted.",
+      "numeric_rejection_reason": "unsupported quantity grammar"
+    },
+    {
+      "phase": "main",
+      "case_id": "main_25",
+      "answer": "0.123457",
+      "primary_grade": "unscoreable",
+      "manual_magnitude_matches_reference": true,
+      "contextual_numeric_value": "123457/1000000",
+      "question_supplied_dimension": "USD",
+      "manual_note": "0.1234565 rounded half-up to6places is0.123457; USD omitted.",
+      "numeric_rejection_reason": "explicit unit or currency required"
+    },
+    {
+      "phase": "main",
+      "case_id": "main_08",
+      "answer": "-1.01",
+      "primary_grade": "unscoreable",
+      "manual_magnitude_matches_reference": true,
+      "contextual_numeric_value": "-101/100",
+      "question_supplied_dimension": "CAD",
+      "manual_note": "-1.005 rounded half-up to2places is-1.01; CAD omitted.",
+      "numeric_rejection_reason": "explicit unit or currency required"
+    },
+    {
+      "phase": "main",
+      "case_id": "main_24",
+      "answer": "9,876,543 JPY",
+      "primary_grade": "correct",
+      "manual_magnitude_matches_reference": true,
+      "manual_note": "Correct JPY amount withheld because JPY is outside the frozen currency grammar.",
+      "numeric_rejection_reason": "unsupported quantity grammar"
+    },
+    {
+      "phase": "main",
+      "case_id": "main_01",
+      "answer": "42.75",
+      "primary_grade": "unscoreable",
+      "manual_magnitude_matches_reference": true,
+      "contextual_numeric_value": "171/4",
+      "question_supplied_dimension": "USD",
+      "manual_note": "Number matches the requested quantity magnitude; explicit unit omitted.",
+      "numeric_rejection_reason": "explicit unit or currency required"
+    },
+    {
+      "phase": "main",
+      "case_id": "main_21",
+      "answer": "12 345 678.90 EUR",
+      "primary_grade": "correct",
+      "manual_magnitude_matches_reference": true,
+      "manual_note": "Correct EUR amount withheld because thin-space digit grouping is unsupported by the frozen parser.",
+      "numeric_rejection_reason": "unsupported quantity grammar"
+    }
+  ],
+  "limitations": [
+    "Manual contextual observations infer omitted dimensions from the question; they are not post-run primary relabeling.",
+    "Answer-format metadata is not appended by frozen prompt_for; do not describe omitted units as violation of that metadata.",
+    "The broader declared grammar is not a superset of the frozen parser; authored counterexamples are separately recorded, and none occurred among the actual21 main unscoreables.",
+    "One synthetic model/seed run; this is not blind scientific qualification, calibration or general numeric reliability."
+  ],
+  "raw_replies_reviewed": 33,
+  "source_reference_pairs_reviewed": 33,
+  "primary_evidence_edits": 0,
+  "model_calls_by_review": 0,
+  "network_calls_by_review": 0
+}

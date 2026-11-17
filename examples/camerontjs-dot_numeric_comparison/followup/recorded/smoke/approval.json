@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "status": "OWNER_APPROVED",
+  "owner": "Cameron",
+  "run_id": "gemma-harder-v1",
+  "profile": "gemma_harder",
+  "freeze_sha256": "02eb21ecaa09a5f2d8e3865c466dfcadcc3d4e48fdcedce4723c2d3effea8015",
+  "source_commit": "658519e2b25ba3b1cec0d3ff62a1a665f5b66629",
+  "model": "gemma3:12b",
+  "digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+  "phase_call_limits": {
+    "smoke": 3,
+    "main": 30
+  },
+  "approved_utc": "2026-11-17T05:33:35.147427+00:00",
+  "owner_instruction": "Go ahead with the 33-call Gemma plan: 3 smoke calls, then 30 main calls if the smoke run verifies. Keep the checker frozen, preserve raw replies and failures, and go over the results with me before publishing.",
+  "note": "Explicit owner authorization for this exact33-request primary matrix only. No publishing, optional-model inference, warmups, retries or automatic reruns are authorized."
+}
