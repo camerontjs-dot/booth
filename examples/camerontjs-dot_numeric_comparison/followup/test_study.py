@@ -342,5 +342,3 @@ def test_contradictory_trace_status_and_approval_snapshot_are_detected(tmp_path,
     (out / "approval.json").write_text(json.dumps(snapshot))
     reseal(out)
     assert verify(out)["status"] != "PASS"
-
-

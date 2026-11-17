@@ -100,4 +100,3 @@ Test gate denial, budget caps, identity drift, create-only phase/output claims, 
 These failure-path fixtures are unit evidence, not live operational or model evidence.
 Portable verification establishes saved-run consistency, not external authenticity.
 Source/config/protocol/case hashes are frozen before inference; any change after inference gets a successor rather than modifying prior evidence.
-

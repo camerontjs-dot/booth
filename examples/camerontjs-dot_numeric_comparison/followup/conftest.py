@@ -9,4 +9,3 @@ def forbid_network(monkeypatch):
         raise AssertionError("Tests must never contact a network/model endpoint")
     monkeypatch.setattr(socket.socket, "connect", denied)
     monkeypatch.setattr(socket, "create_connection", denied)
-

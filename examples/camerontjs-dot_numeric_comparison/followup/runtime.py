@@ -242,4 +242,3 @@ def authorize(declaration, approval_path, execute, run_id, out, smoke_run=None):
     except FileExistsError as exc:
         raise Blocked("this phase was already claimed; preserve it and obtain a new run approval") from exc
     return Permit(declaration, approval, claim_path, approval_path)
-

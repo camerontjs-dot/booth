@@ -63,4 +63,3 @@ The approval record prevents accidental execution; it does not authenticate a pe
 The optional `qwen_original_optional` profile is a separate repeat of the original 20 cases.
 It is unavailable until an exact installed model digest is pinned in a successor configuration; it is not included in the 33-request primary budget.
 No model download, claim, push, PR or public post is automatic.
-
