@@ -1,0 +1,535 @@
+{
+  "schema_version": "booth.numeric.followup.v1",
+  "main_cases": [
+    {
+      "id": "main_01",
+      "category": "currency_anchor",
+      "source": "Synthetic invoice Aster.\nAmount due: 42.75 USD\nEarlier deposit: 10.00 USD",
+      "question": "What is the Amount due in USD?",
+      "target": "Amount due",
+      "round_places": null,
+      "reference": {
+        "value": "42.75",
+        "unit": "USD"
+      },
+      "correct_answer": "42.75 USD",
+      "wrong_answer": "10 USD",
+      "answer_format": "One explicit quantity with its unit; the reference grader also supports the exact wrappers and number forms documented in followup_grade.py.",
+      "challenge_kind": "wrong_field"
+    },
+    {
+      "id": "main_02",
+      "category": "items_anchor",
+      "source": "Synthetic dispatch Birch.\nPacked items: 37 items\nPending items: 9 items",
+      "question": "How many Packed items are recorded?",
+      "target": "Packed items",
+      "round_places": null,
+      "reference": {
+        "value": "37",
+        "unit": "items"
+      },
+      "correct_answer": "Answer: 37 items.",
+      "wrong_answer": "9 items",
+      "answer_format": "One explicit quantity with its unit; the reference grader also supports the exact wrappers and number forms documented in followup_grade.py.",
+      "challenge_kind": "wrapper_and_wrong_field"
+    },
+    {
+      "id": "main_03",
+      "category": "days_anchor",
+      "source": "Synthetic policy Cedar.\nNotice duration: 18 days\nReview duration: 2 months",
+      "question": "What is the Notice duration, retaining its stated unit?",
+      "target": "Notice duration",
+      "round_places": null,
+      "reference": {
+        "value": "18",
+        "unit": "days"
+      },
+      "correct_answer": "The answer is 18 days.",
+      "wrong_answer": "18 months",
+      "answer_format": "One explicit quantity with its unit; the reference grader also supports the exact wrappers and number forms documented in followup_grade.py.",
+      "challenge_kind": "distinct_time_units"
+    },
+    {
+      "id": "main_04",
+      "category": "months_anchor",
+      "source": "Synthetic statement Dune.\nCoverage term: 14 months\nGrace period: 14 days",
+      "question": "What is the Coverage term, retaining its stated unit?",
+      "target": "Coverage term",
+      "round_places": null,
+      "reference": {
+        "value": "14",
+        "unit": "months"
+      },
+      "correct_answer": "It is 14 months.",
+      "wrong_answer": "14 days",
+      "answer_format": "One explicit quantity with its unit; the reference grader also supports the exact wrappers and number forms documented in followup_grade.py.",
+      "challenge_kind": "same_number_wrong_unit"
+    },
+    {
+      "id": "main_05",
+      "category": "signed_refund",
+      "source": "Synthetic credit Elm.\nNet refund adjustment: −125.50 CAD\nGross purchase: 500.00 CAD\nA minus sign denotes a credit.",
+      "question": "What is the signed Net refund adjustment in CAD?",
+      "target": "Net refund adjustment",
+      "round_places": null,
+      "reference": {
+        "value": "-125.50",
+        "unit": "CAD"
+      },
+      "correct_answer": "The amount is CAD −125.50.",
+      "wrong_answer": "125.50 CAD",
+      "answer_format": "One explicit quantity with its unit; the reference grader also supports the exact wrappers and number forms documented in followup_grade.py.",
+      "challenge_kind": "unicode_minus_and_sign"
+    },
+    {
+      "id": "main_06",
+      "category": "accounting_refund",
+      "source": "Synthetic statement Fern.\nReturned-payment adjustment: (640.25) USD\nService charge: 6.40 USD\nParentheses denote a negative amount.",
+      "question": "What is the signed Returned-payment adjustment in USD?",
+      "target": "Returned-payment adjustment",
+      "round_places": null,
+      "reference": {
+        "value": "-640.25",
+        "unit": "USD"
+      },
+      "correct_answer": "USD -6.4025e2",
+      "wrong_answer": "640.25 USD",
+      "answer_format": "One explicit quantity with its unit; the reference grader also supports the exact wrappers and number forms documented in followup_grade.py.",
+      "challenge_kind": "accounting_source_and_exponent"
+    },
+    {
+      "id": "main_07",
+      "category": "half_up_positive",
+      "source": "Synthetic invoice Grove.\nSettlement amount: 2.675 USD\nDeposit amount: 2.670 USD",
+      "question": "Report the Settlement amount in USD, rounded to 2 decimal places using ROUND_HALF_UP.",
+      "target": "Settlement amount",
+      "round_places": 2,
+      "reference": {
+        "value": "2.68",
+        "unit": "USD"
+      },
+      "correct_answer": "The value is 2.6800 USD.",
+      "wrong_answer": "2.67 USD",
+      "answer_format": "One explicit quantity with its unit; the reference grader also supports the exact wrappers and number forms documented in followup_grade.py.",
+      "challenge_kind": "exact_positive_half_up_tie"
+    },
+    {
+      "id": "main_08",
+      "category": "half_up_negative",
+      "source": "Synthetic credit Harbor.\nCredit adjustment: -1.005 CAD\nFee adjustment: -1.000 CAD",
+      "question": "Report the signed Credit adjustment in CAD, rounded to 2 decimal places using ROUND_HALF_UP.",
+      "target": "Credit adjustment",
+      "round_places": 2,
+      "reference": {
+        "value": "-1.01",
+        "unit": "CAD"
+      },
+      "correct_answer": "CAD -1.01",
+      "wrong_answer": "-1.00 CAD",
+      "answer_format": "One explicit quantity with its unit; the reference grader also supports the exact wrappers and number forms documented in followup_grade.py.",
+      "challenge_kind": "exact_negative_half_up_tie"
+    },
+    {
+      "id": "main_09",
+      "category": "currency_discrimination",
+      "source": "Synthetic invoice Iris.\nUS balance: 83.20 USD\nCanadian balance: 83.20 CAD",
+      "question": "What is the US balance, with its explicit currency?",
+      "target": "US balance",
+      "round_places": null,
+      "reference": {
+        "value": "83.20",
+        "unit": "USD"
+      },
+      "correct_answer": "83.2 US dollars",
+      "wrong_answer": "83.20 CAD",
+      "answer_format": "One explicit quantity with its unit; the reference grader also supports the exact wrappers and number forms documented in followup_grade.py.",
+      "challenge_kind": "same_value_different_currency"
+    },
+    {
+      "id": "main_10",
+      "category": "locale_source",
+      "source": "Synthetic statement Juniper.\nNotation: decimal comma; narrow spaces group thousands.\nReserve balance: 1 234,50 EUR\nFee balance: 12,34 EUR",
+      "question": "What is the Reserve balance in EUR, using a decimal point in your answer?",
+      "target": "Reserve balance",
+      "round_places": null,
+      "reference": {
+        "value": "1234.50",
+        "unit": "EUR"
+      },
+      "correct_answer": "EUR 1 234.50",
+      "wrong_answer": "12.34 EUR",
+      "answer_format": "One explicit quantity with its unit; the reference grader also supports the exact wrappers and number forms documented in followup_grade.py.",
+      "challenge_kind": "decimal_comma_source_unicode_grouping_answer"
+    },
+    {
+      "id": "main_11",
+      "category": "scientific_scale",
+      "source": "Synthetic invoice Kestrel.\nContract total: 4.2e3 USD\nInstalment total: 4.2e2 USD",
+      "question": "What is the Contract total in USD?",
+      "target": "Contract total",
+      "round_places": null,
+      "reference": {
+        "value": "4200",
+        "unit": "USD"
+      },
+      "correct_answer": "The amount is 4.2k USD.",
+      "wrong_answer": "420 USD",
+      "answer_format": "One explicit quantity with its unit; the reference grader also supports the exact wrappers and number forms documented in followup_grade.py.",
+      "challenge_kind": "exponent_to_scale_equivalence"
+    },
+    {
+      "id": "main_12",
+      "category": "fraction_to_percent",
+      "source": "Synthetic policy Linden.\nEligible share: fraction 7/8\nIneligible share: fraction 1/8\nFractions here describe rates of the total.",
+      "question": "What is the Eligible share, expressed as a rate?",
+      "target": "Eligible share",
+      "round_places": null,
+      "reference": {
+        "value": "7/8",
+        "unit": "rate"
+      },
+      "correct_answer": "87.5%",
+      "wrong_answer": "12.5 percent",
+      "answer_format": "One explicit quantity with its unit; the reference grader also supports the exact wrappers and number forms documented in followup_grade.py.",
+      "challenge_kind": "explicit_fraction_source"
+    },
+    {
+      "id": "main_13",
+      "category": "percent_to_fraction",
+      "source": "Synthetic policy Maple.\nRebate rate: 37.5 percent\nHandling rate: 3.75 percent",
+      "question": "What is the Rebate rate, expressed as a rate?",
+      "target": "Rebate rate",
+      "round_places": null,
+      "reference": {
+        "value": "3/8",
+        "unit": "rate"
+      },
+      "correct_answer": "The answer is fraction 3/8.",
+      "wrong_answer": "fraction 3/80",
+      "answer_format": "One explicit quantity with its unit; the reference grader also supports the exact wrappers and number forms documented in followup_grade.py.",
+      "challenge_kind": "explicit_fraction_answer"
+    },
+    {
+      "id": "main_14",
+      "category": "percentage_points",
+      "source": "Synthetic statement Nettle.\nRate movement: 2.5 percentage points\nCurrent rate: 12.5 percent",
+      "question": "What is the Rate movement in percentage points?",
+      "target": "Rate movement",
+      "round_places": null,
+      "reference": {
+        "value": "2.5",
+        "unit": "percentage_points"
+      },
+      "correct_answer": "2.5 pp",
+      "wrong_answer": "2.5 percent",
+      "answer_format": "One explicit quantity with its unit; the reference grader also supports the exact wrappers and number forms documented in followup_grade.py.",
+      "challenge_kind": "points_vs_rate_dimension"
+    },
+    {
+      "id": "main_15",
+      "category": "negative_rate",
+      "source": "Synthetic statement Olive.\nRelative rate change: −12.5%\nAbsolute rate movement: −2.5 percentage points",
+      "question": "What is the signed Relative rate change, expressed as a rate?",
+      "target": "Relative rate change",
+      "round_places": null,
+      "reference": {
+        "value": "-1/8",
+        "unit": "rate"
+      },
+      "correct_answer": "fraction −1/8",
+      "wrong_answer": "fraction 1/8",
+      "answer_format": "One explicit quantity with its unit; the reference grader also supports the exact wrappers and number forms documented in followup_grade.py.",
+      "challenge_kind": "signed_rate_fraction_equivalence"
+    },
+    {
+      "id": "main_16",
+      "category": "million_scale",
+      "source": "Synthetic invoice Pebble.\nProject allocation: 1.25 million CAD\nDepartment allocation: 1.25 thousand CAD",
+      "question": "What is the Project allocation in CAD?",
+      "target": "Project allocation",
+      "round_places": null,
+      "reference": {
+        "value": "1250000",
+        "unit": "CAD"
+      },
+      "correct_answer": "CAD 1.25e6",
+      "wrong_answer": "1250 CAD",
+      "answer_format": "One explicit quantity with its unit; the reference grader also supports the exact wrappers and number forms documented in followup_grade.py.",
+      "challenge_kind": "million_vs_thousand"
+    },
+    {
+      "id": "main_17",
+      "category": "billion_scale",
+      "source": "Synthetic statement Quartz.\nContingency reserve: 0.000004 billion GBP\nCash float: 400 GBP",
+      "question": "What is the Contingency reserve in GBP?",
+      "target": "Contingency reserve",
+      "round_places": null,
+      "reference": {
+        "value": "4000",
+        "unit": "GBP"
+      },
+      "correct_answer": "4k GBP",
+      "wrong_answer": "0.004 GBP",
+      "answer_format": "One explicit quantity with its unit; the reference grader also supports the exact wrappers and number forms documented in followup_grade.py.",
+      "challenge_kind": "small_billion_to_base_units"
+    },
+    {
+      "id": "main_18",
+      "category": "currency_fraction",
+      "source": "Synthetic invoice Rowan.\nUnit charge: fraction 25/4 USD\nUnit deposit: fraction 5/4 USD",
+      "question": "What is the Unit charge in USD?",
+      "target": "Unit charge",
+      "round_places": null,
+      "reference": {
+        "value": "6.25",
+        "unit": "USD"
+      },
+      "correct_answer": "fraction 25/4 USD",
+      "wrong_answer": "1.25 USD",
+      "answer_format": "One explicit quantity with its unit; the reference grader also supports the exact wrappers and number forms documented in followup_grade.py.",
+      "challenge_kind": "explicit_currency_fraction"
+    },
+    {
+      "id": "main_19",
+      "category": "signed_zero_rate",
+      "source": "Synthetic statement Spruce.\nLoss rate: −0.000 percent\nPrior loss rate: 0.010 percent",
+      "question": "What is the Loss rate, expressed as a rate?",
+      "target": "Loss rate",
+      "round_places": null,
+      "reference": {
+        "value": "0",
+        "unit": "rate"
+      },
+      "correct_answer": "0 percent",
+      "wrong_answer": "0 percentage points",
+      "answer_format": "One explicit quantity with its unit; the reference grader also supports the exact wrappers and number forms documented in followup_grade.py.",
+      "challenge_kind": "zero_equivalence_retains_dimension"
+    },
+    {
+      "id": "main_20",
+      "category": "grouped_days",
+      "source": "Synthetic archive policy Thistle.\nRetention period: 12 345 days\nReview period: 123 months\nFigure spaces group thousands.",
+      "question": "What is the Retention period, retaining days as the unit?",
+      "target": "Retention period",
+      "round_places": null,
+      "reference": {
+        "value": "12345",
+        "unit": "days"
+      },
+      "correct_answer": "1.2345e4 days",
+      "wrong_answer": "12345 months",
+      "answer_format": "One explicit quantity with its unit; the reference grader also supports the exact wrappers and number forms documented in followup_grade.py.",
+      "challenge_kind": "figure_space_grouping_and_exponent"
+    },
+    {
+      "id": "main_21",
+      "category": "large_exact_scale",
+      "source": "Synthetic statement Umber.\nCapital balance: 12 345 678.90 EUR\nExpense balance: 123 456.78 EUR\nThin spaces group thousands.",
+      "question": "What is the Capital balance in EUR?",
+      "target": "Capital balance",
+      "round_places": null,
+      "reference": {
+        "value": "12345678.90",
+        "unit": "EUR"
+      },
+      "correct_answer": "12.3456789 million EUR",
+      "wrong_answer": "12.345678 million EUR",
+      "answer_format": "One explicit quantity with its unit; the reference grader also supports the exact wrappers and number forms documented in followup_grade.py.",
+      "challenge_kind": "large_scale_exactness"
+    },
+    {
+      "id": "main_22",
+      "category": "exponent_items",
+      "source": "Synthetic dispatch Violet.\nShipped quantity: 1,200 items\nOrdered quantity: 12,000 items",
+      "question": "What is the Shipped quantity in items?",
+      "target": "Shipped quantity",
+      "round_places": null,
+      "reference": {
+        "value": "1200",
+        "unit": "items"
+      },
+      "correct_answer": "The answer is 1.2e3 items.",
+      "wrong_answer": "12,000 items",
+      "answer_format": "One explicit quantity with its unit; the reference grader also supports the exact wrappers and number forms documented in followup_grade.py.",
+      "challenge_kind": "grouped_source_exponent_answer"
+    },
+    {
+      "id": "main_23",
+      "category": "unicode_signed_currency",
+      "source": "Synthetic credit Willow.\nNet adjustment: −8 765.4321 USD\nPrior adjustment: −87.654321 USD\nNarrow spaces group thousands.",
+      "question": "What is the exact signed Net adjustment in USD? Do not round.",
+      "target": "Net adjustment",
+      "round_places": null,
+      "reference": {
+        "value": "-8765.4321",
+        "unit": "USD"
+      },
+      "correct_answer": "USD −8 765.4321",
+      "wrong_answer": "-8765.432 USD",
+      "answer_format": "One explicit quantity with its unit; the reference grader also supports the exact wrappers and number forms documented in followup_grade.py.",
+      "challenge_kind": "unicode_sign_grouping_exact_precision"
+    },
+    {
+      "id": "main_24",
+      "category": "yen_scale",
+      "source": "Synthetic statement Xenia.\nYen reserve: 9,876,543 JPY\nEuro reserve: 9,876,543 EUR",
+      "question": "What is the Yen reserve in JPY?",
+      "target": "Yen reserve",
+      "round_places": null,
+      "reference": {
+        "value": "9876543",
+        "unit": "JPY"
+      },
+      "correct_answer": "9.876543m JPY",
+      "wrong_answer": "9.876543m EUR",
+      "answer_format": "One explicit quantity with its unit; the reference grader also supports the exact wrappers and number forms documented in followup_grade.py.",
+      "challenge_kind": "explicit_currency_scale_abbreviation"
+    },
+    {
+      "id": "main_25",
+      "category": "half_up_six_places",
+      "source": "Synthetic invoice Yarrow.\nMicrocharge: 0.1234565 USD\nMicrodeposit: 0.1234560 USD",
+      "question": "Report the Microcharge in USD, rounded to 6 decimal places using ROUND_HALF_UP.",
+      "target": "Microcharge",
+      "round_places": 6,
+      "reference": {
+        "value": "0.123457",
+        "unit": "USD"
+      },
+      "correct_answer": "USD 1.23457e-1",
+      "wrong_answer": "0.123456 USD",
+      "answer_format": "One explicit quantity with its unit; the reference grader also supports the exact wrappers and number forms documented in followup_grade.py.",
+      "challenge_kind": "six_place_positive_half_up_tie"
+    },
+    {
+      "id": "main_26",
+      "category": "half_up_one_place_negative",
+      "source": "Synthetic credit Zephyr.\nSigned adjustment: -9.95 GBP\nPrevious adjustment: -9.90 GBP",
+      "question": "Report the Signed adjustment in GBP, rounded to 1 decimal place using ROUND_HALF_UP.",
+      "target": "Signed adjustment",
+      "round_places": 1,
+      "reference": {
+        "value": "-10.0",
+        "unit": "GBP"
+      },
+      "correct_answer": "-1e1 GBP",
+      "wrong_answer": "-9.9 GBP",
+      "answer_format": "One explicit quantity with its unit; the reference grader also supports the exact wrappers and number forms documented in followup_grade.py.",
+      "challenge_kind": "one_place_negative_half_up_tie"
+    },
+    {
+      "id": "main_27",
+      "category": "half_up_integer_negative",
+      "source": "Synthetic credit Amber.\nCredit entry: -12.5 CAD\nFee entry: -12.4 CAD",
+      "question": "Report the signed Credit entry in CAD, rounded to 0 decimal places using ROUND_HALF_UP.",
+      "target": "Credit entry",
+      "round_places": 0,
+      "reference": {
+        "value": "-13",
+        "unit": "CAD"
+      },
+      "correct_answer": "-13 CAD",
+      "wrong_answer": "-12 CAD",
+      "answer_format": "One explicit quantity with its unit; the reference grader also supports the exact wrappers and number forms documented in followup_grade.py.",
+      "challenge_kind": "integer_negative_half_up_tie"
+    },
+    {
+      "id": "main_28",
+      "category": "half_up_integer_positive",
+      "source": "Synthetic invoice Bracken.\nRounded settlement basis: 8.5 EUR\nOther settlement basis: 8.4 EUR",
+      "question": "Report the Rounded settlement basis in EUR, rounded to 0 decimal places using ROUND_HALF_UP.",
+      "target": "Rounded settlement basis",
+      "round_places": 0,
+      "reference": {
+        "value": "9",
+        "unit": "EUR"
+      },
+      "correct_answer": "Answer: 9 euros.",
+      "wrong_answer": "8 EUR",
+      "answer_format": "One explicit quantity with its unit; the reference grader also supports the exact wrappers and number forms documented in followup_grade.py.",
+      "challenge_kind": "integer_positive_half_up_tie"
+    },
+    {
+      "id": "main_29",
+      "category": "unrounded_fraction_equivalence",
+      "source": "Synthetic invoice Clover.\nExact service amount: 1.234500 USD\nRounded display amount: 1.23 USD",
+      "question": "What is the Exact service amount in USD? Do not round.",
+      "target": "Exact service amount",
+      "round_places": null,
+      "reference": {
+        "value": "1.2345",
+        "unit": "USD"
+      },
+      "correct_answer": "USD fraction 2469/2000",
+      "wrong_answer": "1.23 USD",
+      "answer_format": "One explicit quantity with its unit; the reference grader also supports the exact wrappers and number forms documented in followup_grade.py.",
+      "challenge_kind": "unrounded_decimal_rational_equivalence"
+    },
+    {
+      "id": "main_30",
+      "category": "half_up_negative_cent",
+      "source": "Synthetic credit Drift.\nTiny credit: -0.005 EUR\nTiny fee: 0.005 EUR",
+      "question": "Report the signed Tiny credit in EUR, rounded to 2 decimal places using ROUND_HALF_UP.",
+      "target": "Tiny credit",
+      "round_places": 2,
+      "reference": {
+        "value": "-0.01",
+        "unit": "EUR"
+      },
+      "correct_answer": "The amount is -0.01 EUR.",
+      "wrong_answer": "0 EUR",
+      "answer_format": "One explicit quantity with its unit; the reference grader also supports the exact wrappers and number forms documented in followup_grade.py.",
+      "challenge_kind": "negative_half_cent_tie"
+    }
+  ],
+  "smoke_cases": [
+    {
+      "id": "smoke_01",
+      "category": "smoke_currency",
+      "source": "Synthetic smoke invoice Saffron.\nInvoice total: 61.40 GBP\nDeposit total: 4.00 GBP",
+      "question": "What is the Invoice total in GBP?",
+      "target": "Invoice total",
+      "round_places": null,
+      "reference": {
+        "value": "61.40",
+        "unit": "GBP"
+      },
+      "correct_answer": "61.40 GBP",
+      "wrong_answer": "4 GBP",
+      "answer_format": "One explicit quantity with its unit; the reference grader also supports the exact wrappers and number forms documented in followup_grade.py.",
+      "challenge_kind": "smoke_wrong_field"
+    },
+    {
+      "id": "smoke_02",
+      "category": "smoke_days",
+      "source": "Synthetic smoke policy Tansy.\nWaiting duration: 23 days\nRenewal duration: 7 months",
+      "question": "What is the Waiting duration in days?",
+      "target": "Waiting duration",
+      "round_places": null,
+      "reference": {
+        "value": "23",
+        "unit": "days"
+      },
+      "correct_answer": "23 days",
+      "wrong_answer": "23 months",
+      "answer_format": "One explicit quantity with its unit; the reference grader also supports the exact wrappers and number forms documented in followup_grade.py.",
+      "challenge_kind": "smoke_wrong_dimension"
+    },
+    {
+      "id": "smoke_03",
+      "category": "smoke_rate",
+      "source": "Synthetic smoke policy Verbena.\nDiscount rate: 6.25%\nSurcharge rate: 1.25%",
+      "question": "What is the Discount rate, expressed as a rate?",
+      "target": "Discount rate",
+      "round_places": null,
+      "reference": {
+        "value": "1/16",
+        "unit": "rate"
+      },
+      "correct_answer": "fraction 1/16",
+      "wrong_answer": "fraction 1/80",
+      "answer_format": "One explicit quantity with its unit; the reference grader also supports the exact wrappers and number forms documented in followup_grade.py.",
+      "challenge_kind": "smoke_rate_equivalence"
+    }
+  ]
+}

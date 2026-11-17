@@ -1,0 +1,60 @@
+{
+  "schema_version": "booth.numeric.followup.authoring.v1",
+  "first_authored_at_utc": "2026-11-17T04:46:50.877245+00:00",
+  "frozen_at_utc": "2026-11-17T04:53:37.188977+00:00",
+  "provenance": "Authored by a separate Codex agent under a restricted aperture. This is not human-independent authorship or blind scientific qualification.",
+  "model_identity": "Not recorded; no model-version identity is asserted.",
+  "aperture": {
+    "allowed": [
+      "The parent task message",
+      "Own scratch authoring folder",
+      "Normal agent authoring",
+      "Deterministic Python tests",
+      "Parent follow-up message clarifying source serialization; own frozen v1 artifacts for this authorized successor"
+    ],
+    "excluded": [
+      "Production checker or comparator implementation",
+      "Pre-existing external cases, graders, or results; own authored v1 may be read only for the authorized layout successor",
+      "Repositories",
+      "Memory",
+      "Other task files",
+      "Network and GitHub",
+      "Experimental model calls including inference, embeddings, warmups, or live tests",
+      "Delegation"
+    ],
+    "observed_compliance": "Only parent task messages and own scratch files were read. No repository, memory, production checker, or external case/grader/result material was read or executed."
+  },
+  "case_counts": {
+    "main": 30,
+    "smoke": 3
+  },
+  "known_limits": [
+    "Synthetic author-created controls; no claim of distributional representativeness.",
+    "The bounded reference grammar is documented in followup_grade.py; it is not unrestricted semantic grading.",
+    "No experimental model calls or production-checker runs were performed. No live performance is measured.",
+    "Reference values are exact final base-unit quantities; only explicit monetary instructions produce rounded references.",
+    "Rates, percentage points, each currency, days, months, and items are distinct units; no currency or calendar conversion is inferred.",
+    "Smoke cases have separate IDs, sources, questions, and reference pairs from main cases; grammar overlap is intentional.",
+    "Source statements are entirely synthetic and do not identify real invoices, policies, or accounts."
+  ],
+  "reference_check_method": {
+    "all_33": "Separately written exact rational ledger in test_followup_grade.py, plus own source-to-reference arithmetic review.",
+    "wider_numeric_forms": "Independent Fraction arithmetic checks cover exponent, fraction, percent and scale source interpretations.",
+    "rounding": "All 7 requested monetary ROUND_HALF_UP references verified with Decimal.quantize, including negative ties; candidates are never rounded.",
+    "controls": "All 33 correct_answer values graded correct and all 33 wrong_answer values graded wrong by the independently authored bounded grader."
+  },
+  "source_authoring_record_sha256": "79adeb4ac99e3e26e9f63490392186d8f3020314ac0f0a64a8e146071f87046e",
+  "case_artifact_hashes": {
+    "challenge_cases.json": "142218af03f1af0f0e70163b14e8747c278c39a50b4376c983cb2f31aad6f83c",
+    "followup_grade.py": "b1f30b1ab46096bd8b4cbb86fddf5e07cbbe3d2d10d256271e4bf5bde9bed14d",
+    "test_followup_grade.py": "5df1fe629a587e10a5fc8eeace9928d75511a87dde4b2b9773a9204fd35b0850"
+  },
+  "layout_successor": {
+    "prior_case_sha256": "899e7101db50e0b807af39d2588b13d2bb10d708a6f1c5d84e7527f2067d4ee6",
+    "current_case_sha256": "142218af03f1af0f0e70163b14e8747c278c39a50b4376c983cb2f31aad6f83c",
+    "changed_fields": "Only source layout in all 33 cases: numeric facts moved onto separate labelled lines. No values, questions, controls, references, IDs or grammar choices changed.",
+    "basis": "Parent clarified the source serialization interface before any checker outcomes were observed.",
+    "retained_locally": "Full authoring record, original case artifact, prior grader/test versions, both freeze manifests and validation receipts."
+  },
+  "new_model_calls": 0
+}

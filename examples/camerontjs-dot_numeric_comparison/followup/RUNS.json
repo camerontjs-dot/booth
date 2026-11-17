@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "host": "http://127.0.0.1:11434",
+  "booth_version": "0.5.9",
+  "settings": {
+    "temperature": 0,
+    "seed": 42,
+    "num_predict": 1024,
+    "num_ctx": 4096,
+    "timeout_s": 300,
+    "max_retries": 0,
+    "confidence_threshold": 0.7,
+    "keyword_threshold": 0.5
+  },
+  "warmup_calls": 0,
+  "profiles": {
+    "gemma_harder": {
+      "case_set": "harder",
+      "model": "gemma3:12b",
+      "digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+      "quantization": "Q4_K_M",
+      "ready": true,
+      "phase_calls": {
+        "smoke": 3,
+        "main": 30
+      },
+      "purpose": "Fresh independently authored cases against the unchanged numeric checker."
+    },
+    "qwen_original_optional": {
+      "case_set": "original",
+      "model": "qwen2.5:7b",
+      "digest": null,
+      "quantization": null,
+      "ready": false,
+      "phase_calls": {
+        "smoke": 3,
+        "main": 20
+      },
+      "purpose": "Optional separate same-cases smaller-model repeat; model is not installed/pinned and is not included in the proposed approval."
+    }
+  }
+}
+
