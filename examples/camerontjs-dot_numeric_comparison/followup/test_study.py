@@ -342,3 +342,22 @@ def test_contradictory_trace_status_and_approval_snapshot_are_detected(tmp_path,
     (out / "approval.json").write_text(json.dumps(snapshot))
     reseal(out)
     assert verify(out)["status"] != "PASS"
+
+
+@pytest.mark.parametrize("bad_time", ["not-a-timestamp", "2000-01-01T00:00:00", 42])
+def test_resealed_approval_timestamp_matches_execution_gate(tmp_path, monkeypatch, bad_time):
+    approval, out = approve(tmp_path), tmp_path / "synthetic-smoke"
+    fake_http(monkeypatch)
+    assert study.run(args(approval, out)) == 0
+    path = out / "approval.json"
+    snapshot = runtime.read_json(path)
+    snapshot["approved_utc"] = bad_time
+    path.write_text(json.dumps(snapshot))
+    manifest = runtime.read_json(out / "manifest.json")
+    manifest["approval_sha256"] = runtime.sha(path.read_bytes())
+    (out / "manifest.json").write_text(json.dumps(manifest))
+    reseal(out)
+    result = verify(out)
+    assert result["status"] != "PASS"
+    assert "approval instruction/time" in result["findings"]
+    assert runtime.valid_approval_time(bad_time) is False

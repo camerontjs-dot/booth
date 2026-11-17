@@ -12,7 +12,7 @@ import json
 from pathlib import Path
 import random
 
-from runtime import ARMS, HERE, Blocked, cases_for, commit_matches, file_manifest, load_frozen, sha, utc, write_json
+from runtime import ARMS, HERE, Blocked, cases_for, commit_matches, file_manifest, load_frozen, sha, utc, valid_approval_time, write_json
 from verify_recorded import offline, parse_json
 
 
@@ -109,7 +109,7 @@ def verify(run_dir):
             }.items():
                 check("approval binding " + key, approval.get(key) == expected)
             check("approval call cap", approval["phase_call_limits"].get(phase) == expected_calls)
-            check("approval instruction/time", isinstance(approval.get("owner_instruction"), str) and bool(approval["owner_instruction"].strip()) and bool(approval.get("approved_utc")))
+            check("approval instruction/time", isinstance(approval.get("owner_instruction"), str) and bool(approval["owner_instruction"].strip()) and valid_approval_time(approval.get("approved_utc")))
         expected_rows = len(canonical_cases) * (2 if mode == "offline_controls" else 1)
         check("record count", len(records) == expected_rows and completion["records"] == len(records))
         expected_keys = [(c["id"], label) for c in canonical_cases for label in ("correct", "wrong")] if mode == "offline_controls" else [(c["id"], None) for c in canonical_cases]

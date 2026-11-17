@@ -150,6 +150,16 @@ def plan(profile_name, phase):
     }
 
 
+def valid_approval_time(value):
+    if not isinstance(value, str):
+        return False
+    try:
+        parsed = dt.datetime.fromisoformat(value.replace("Z", "+00:00"))
+        return parsed.tzinfo is not None
+    except ValueError:
+        return False
+
+
 class Permit:
     """One claimed phase and its hard call cap; never instantiated by tests by default."""
     def __init__(self, declaration, approval, claim_path, approval_path):
@@ -199,12 +209,8 @@ def authorize(declaration, approval_path, execute, run_id, out, smoke_run=None):
             raise Blocked("owner approval missing or mismatched: " + key)
     if not isinstance(approval.get("approved_utc"), str) or not isinstance(approval.get("owner_instruction"), str) or not approval["owner_instruction"].strip():
         raise Blocked("approval needs the explicit owner instruction and time")
-    try:
-        approved_time = dt.datetime.fromisoformat(approval["approved_utc"].replace("Z", "+00:00"))
-        if approved_time.tzinfo is None:
-            raise ValueError("missing timezone")
-    except ValueError as exc:
-        raise Blocked("approval time must be an explicit timezone-aware ISO timestamp") from exc
+    if not valid_approval_time(approval["approved_utc"]):
+        raise Blocked("approval time must be an explicit timezone-aware ISO timestamp")
     phases = approval.get("phase_call_limits", {})
     if type(phases.get(declaration["phase"])) is not int or phases[declaration["phase"]] != declaration["expected_total_model_calls"]:
         raise Blocked("phase is not approved for its exact call budget")
